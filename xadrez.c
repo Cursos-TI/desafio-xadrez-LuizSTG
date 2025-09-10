@@ -5,28 +5,54 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    int opcao;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    do {
+        printf("*** MENU ***\n");
+        printf("1. Torre\n");
+        printf("2. Bispo\n");
+        printf("3. Rainha\n");
+        printf("0. Sair\n");
+        printf("Escolha uma peça: ");
+        scanf("%d", &opcao);
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+        int b = 1, r = 1; // reinicia contadores a cada escolha
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+        switch (opcao) {
+            
+        case 1: // Torre com FOR
+            printf("Movimento da Torre:\n");
+            for (int t = 1; t <= 5; t++) {
+                printf("Direita\n");
+            }
+            break;
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+        case 2: // Bispo com WHILE
+            printf("Movimento do Bispo:\n");
+            while (b <= 5) {
+                printf("Diagonal superior direita\n");
+                b++;
+            }
+            break;
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+        case 3: // Rainha com DO WHILE
+            printf("Movimento da Rainha:\n");
+            do {
+                printf("Esquerda\n");
+                r++;
+            } while (r <= 8);
+            break;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+        case 0:
+            printf("Saindo do programa...\n");
+            break;
+
+        default:
+            printf("Opção inválida!\n");
+            break;
+        }
+
+    } while (opcao != 0);
 
     return 0;
 }
